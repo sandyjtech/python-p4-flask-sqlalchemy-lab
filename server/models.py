@@ -1,3 +1,4 @@
+#models.py
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import MetaData
 
@@ -34,8 +35,7 @@ class Animal(db.Model):
 
     zookeeper_id = db.Column(db.Integer, db.ForeignKey('zookeepers.id'))
     enclosure_id = db.Column(db.Integer, db.ForeignKey('enclosures.id'))
-    zookeeper_id = db.Column(db.Integer, db.ForeignKey('zookeepers.id'))
-    enclosure_id = db.Column(db.Integer, db.ForeignKey('enclosures.id'))
+
 
     zookeeper = db.relationship('Zookeeper', back_populates='animals')
     enclosure = db.relationship('Enclosure', back_populates='animals')
